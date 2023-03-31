@@ -30,7 +30,7 @@ read_options = ReadSession.TableReadOptions(
               selected_fields=["id", "name","Time"]
     )
 #read_options.row_restriction = "partition_field like '%INSBI1%'"
-read_options.row_restriction = "partition_field BETWEEN 8 AND 9"
+read_options.row_restriction = "partition_field BETWEEN 2 AND 3"
 
 parent = "projects/{}".format(project_id_billing)
 
@@ -79,7 +79,7 @@ for message in consumer:
     x1 = message.value
     x2 = x1.decode('utf8')
     x3 = json.loads(x2)["sanction_payload"]
-    count = 0
+    #count = 0
     frames = []
 
     for my_message in reader.rows().pages:
@@ -88,9 +88,9 @@ for message in consumer:
         #producer.send('my-first-topic', my_message.to_dataframe().to_json().encode('utf-8'))
         #print(message.to_dataframe())
         #frames.append(message.to_dataframe())
-        count = count + 1
-        print("Count: ",count)
-        time.sleep(0.01)
+        #count = count + 1
+        #print("Count: ",count)
+        #time.sleep(0.01)
         #print(type(message))
         #if count==1:
            #break
