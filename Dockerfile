@@ -2,5 +2,5 @@ FROM python:3.9
 WORKDIR ./
 COPY ./requirement.txt ./requirement.txt
 RUN pip install -r requirement.txt
-COPY ./bq_storage_read_api_v4.py ./bq_storage_read_api_v4.py
-CMD ["python3","./bq_storage_read_api_v4.py"]
+COPY ./bq_storage_read_api_v5.py ./bq_storage_read_api_v5.py
+CMD ["python3","./bq_storage_read_api_v5.py"]
