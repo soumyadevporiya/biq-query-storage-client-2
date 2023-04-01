@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bqstoragereadclient-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bqstoragereadclient-2
+  template:
+      metadata:
+        labels:
+          app: bqstoragereadclient-2
+      spec:
+        containers:
+        - name: bqstoragereadclient-2
+          image: gcr.io/level-approach-382012/bq_storage_reader_client_2:latest
