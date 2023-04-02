@@ -1,13 +1,13 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/level-approach-382012/bq_storage_reader_client_5:latest','.']
+    args: ['build', '-t', 'gcr.io/level-approach-382012/bq_storage_reader_client_6:latest','.']
     id: 'build-image-myapp'
     waitFor: ['-']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push','gcr.io/level-approach-382012/bq_storage_reader_client_5:latest']
+    args: ['push','gcr.io/level-approach-382012/bq_storage_reader_client_6:latest']
     id: 'push-image-to-container-registry'
     waitFor: ['build-image-myapp']
 options:
   logging: CLOUD_LOGGING_ONLY
 images:
-- 'gcr.io/level-approach-382012/bq_storage_reader_client_5:latest'
+- 'gcr.io/level-approach-382012/bq_storage_reader_client_6:latest'
